@@ -14,22 +14,43 @@ namespace Part_5._5___More_Classes
         public die()
         {
             _generator = new Random();
-            _roll = _generator.Next(1,7);
-        }
-
-        public die(int roll)
-        {
-
         }
         public int Roll { get { return _roll; } }
         public override string ToString()
         {
             return _roll.ToString();
         }
-        
-        public void RollDie()
+        public void RollDie2()
+        {
+            _roll = _generator.Next(1, 3);
+        }
+        public void RollDie3()
+        {
+            _roll = _generator.Next(1, 4);
+        }
+        public void RollDie4()
+        {
+            _roll = _generator.Next(1, 5);
+        }
+        public void RollDie5()
+        {
+            _roll = _generator.Next(1, 6);
+        }
+        public void RollDie6()
         {
             _roll = _generator.Next(1, 7);
+        }
+        public void RollDie7()
+        {
+            _roll = _generator.Next(1, 8);
+        }
+        public void RollDie8()
+        {
+            _roll = _generator.Next(1, 9);
+        }
+        public void RollDie9()
+        {
+            _roll = _generator.Next(1, 10);
         }
 
         public void DrawRoll()
@@ -80,6 +101,30 @@ namespace Part_5._5___More_Classes
                 Console.WriteLine("| o o |");
                 Console.WriteLine("| o o |");
                 Console.WriteLine("| o o |");
+                Console.WriteLine(" ----- ");
+            }
+            else if (_roll == 7)
+            {
+                Console.WriteLine(" _____ ");
+                Console.WriteLine("| o o |");
+                Console.WriteLine("|o o o|");
+                Console.WriteLine("| o o |");
+                Console.WriteLine(" ----- ");
+            }
+            else if (_roll == 8)
+            {
+                Console.WriteLine(" _____ ");
+                Console.WriteLine("|o o o|");
+                Console.WriteLine("| o o |");
+                Console.WriteLine("|o o o|");
+                Console.WriteLine(" ----- ");
+            }
+            else if (_roll == 9)
+            {
+                Console.WriteLine(" _____ ");
+                Console.WriteLine("|o o o|");
+                Console.WriteLine("|o o o|");
+                Console.WriteLine("|o o o|");
                 Console.WriteLine(" ----- ");
             }
         }
