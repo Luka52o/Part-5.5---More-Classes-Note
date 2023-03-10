@@ -6,7 +6,7 @@
         {
             int load;
             string initialInput;
-            int initialOutput;
+            int parsedInput;
             die die1 = new die();
             die die2 = new die();
             die die3 = new die();
@@ -19,15 +19,15 @@
 
             Console.WriteLine("Enter a number from 2-9 to specify dice side number, or enter nothing for a standard D6");
             initialInput = Console.ReadLine();
-            if (Int32.TryParse(initialInput, out initialOutput) && initialOutput > 1 && initialOutput < 9)
+            if (Int32.TryParse(initialInput, out parsedInput) && parsedInput > 1 && parsedInput <= 9)
             {
-                if (initialOutput == 2)
+                if (parsedInput == 2)
                 {
                     Console.WriteLine("D2: Press ENTER to roll the dice");
-                    if (Console.ReadLine() == "LOAD")
+                    if (Console.ReadLine().ToUpper() == "LOAD")
                     {
                         Console.WriteLine("Load activated. Enter desired value:");
-                        while (!Int32.TryParse(Console.ReadLine(), out load) || load < 0 || load > 6)
+                        while (!Int32.TryParse(Console.ReadLine(), out load) || load < 0 || load > 2)
                             Console.WriteLine("To load the dice, you need to enter a valid digit from 1-6");
                         die1.RollDie2();
                         die2.RollDie2();
@@ -39,19 +39,25 @@
                         {
                             die2.DrawRoll();
                         }
+                        else
+                        {
+                            die1.RollDie2();
+                            die1.DrawRoll();
+                        }
                     }
                     else
                     {
+                        die1.RollDie2();
                         die1.DrawRoll();
                     }
                 }
-                else if (initialOutput == 3)
+                else if (parsedInput == 3)
                 {
                     Console.WriteLine("D3: Press ENTER to roll the dice");
-                    if (Console.ReadLine() == "LOAD")
+                    if (Console.ReadLine().ToUpper() == "LOAD")
                     {
                         Console.WriteLine("Load activated. Enter desired value:");
-                        while (!Int32.TryParse(Console.ReadLine(), out load) || load < 0 || load > 6)
+                        while (!Int32.TryParse(Console.ReadLine(), out load) || load < 0 || load > 3)
                             Console.WriteLine("To load the dice, you need to enter a valid digit from 1-6");
                         die1.RollDie3();
                         die2.RollDie3();
@@ -68,19 +74,25 @@
                         {
                             die3.DrawRoll();
                         }
+                        else
+                        {
+                            die1.RollDie3();
+                            die1.DrawRoll();
+                        }
                     }
                     else
                     {
+                        die1.RollDie3();
                         die1.DrawRoll();
                     }
                 }
-                else if (initialOutput == 4)
+                else if (parsedInput == 4)
                 {
                     Console.WriteLine("D4: Press ENTER to roll the dice");
-                    if (Console.ReadLine() == "LOAD")
+                    if (Console.ReadLine().ToUpper() == "LOAD")
                     {
                         Console.WriteLine("Load activated. Enter desired value:");
-                        while (!Int32.TryParse(Console.ReadLine(), out load) || load < 0 || load > 6)
+                        while (!Int32.TryParse(Console.ReadLine(), out load) || load < 0 || load > 4)
                             Console.WriteLine("To load the dice, you need to enter a valid digit from 1-6");
                         die1.RollDie4();
                         die2.RollDie4();
@@ -102,19 +114,25 @@
                         {
                             die4.DrawRoll();
                         }
+                        else
+                        {
+                            die1.RollDie4();
+                            die1.DrawRoll();
+                        }
                     }
                     else
                     {
+                        die1.RollDie4();
                         die1.DrawRoll();
                     }
                 }
-                else if (initialOutput == 5)
+                else if (parsedInput == 5)
                 {
                     Console.WriteLine("D5: Press ENTER to roll the dice");
-                    if (Console.ReadLine() == "LOAD")
+                    if (Console.ReadLine().ToUpper() == "LOAD")
                     {
                         Console.WriteLine("Load activated. Enter desired value:");
-                        while (!Int32.TryParse(Console.ReadLine(), out load) || load < 0 || load > 6)
+                        while (!Int32.TryParse(Console.ReadLine(), out load) || load < 0 || load > 5)
                             Console.WriteLine("To load the dice, you need to enter a valid digit from 1-6");
                         die1.RollDie5();
                         die2.RollDie5();
@@ -141,16 +159,22 @@
                         {
                             die5.DrawRoll();
                         }
+                        else
+                        {
+                            die1.RollDie5();
+                            die1.DrawRoll();
+                        }
                     }
                     else
                     {
+                        die1.RollDie5();
                         die1.DrawRoll();
                     }
                 }
-                else if (initialOutput == 6)
+                else if (parsedInput == 6)
                 {
                     Console.WriteLine("D6: Press ENTER to roll the dice");
-                    if (Console.ReadLine() == "LOAD")
+                    if (Console.ReadLine().ToUpper() == "LOAD")
                     {
                         Console.WriteLine("Load activated. Enter desired value:");
                         while (!Int32.TryParse(Console.ReadLine(), out load) || load < 0 || load > 6)
@@ -185,19 +209,25 @@
                         {
                             die6.DrawRoll();
                         }
+                        else
+                        {
+                            die1.RollDie6();
+                            die1.DrawRoll();
+                        }
                     }
                     else
                     {
+                        die1.RollDie6();
                         die1.DrawRoll();
                     }
                 }
-                else if (initialOutput == 7)
+                else if (parsedInput == 7)
                 {
                     Console.WriteLine("D7: Press ENTER to roll the dice");
-                    if (Console.ReadLine() == "LOAD")
+                    if (Console.ReadLine().ToUpper() == "LOAD")
                     {
                         Console.WriteLine("Load activated. Enter desired value:");
-                        while (!Int32.TryParse(Console.ReadLine(), out load) || load < 0 || load > 6)
+                        while (!Int32.TryParse(Console.ReadLine(), out load) || load < 0 || load > 7)
                             Console.WriteLine("To load the dice, you need to enter a valid digit from 1-6");
                         die1.RollDie7();
                         die2.RollDie7();
@@ -234,19 +264,25 @@
                         {
                             die7.DrawRoll();
                         }
+                        else
+                        {
+                            die1.RollDie7();
+                            die1.DrawRoll();
+                        }
                     }
                     else
                     {
+                        die1.RollDie7();
                         die1.DrawRoll();
                     }
                 }
-                else if (initialOutput == 8)
+                else if (parsedInput == 8)
                 {
                     Console.WriteLine("D8: Press ENTER to roll the dice");
-                    if (Console.ReadLine() == "LOAD")
+                    if (Console.ReadLine().ToUpper() == "LOAD")
                     {
                         Console.WriteLine("Load activated. Enter desired value:");
-                        while (!Int32.TryParse(Console.ReadLine(), out load) || load < 0 || load > 6)
+                        while (!Int32.TryParse(Console.ReadLine(), out load) || load < 0 || load > 8)
                             Console.WriteLine("To load the dice, you need to enter a valid digit from 1-6");
                         die1.RollDie8();
                         die2.RollDie8();
@@ -288,19 +324,25 @@
                         {
                             die8.DrawRoll();
                         }
+                        else
+                        {
+                            die1.RollDie8();
+                            die1.DrawRoll();
+                        }
                     }
                     else
                     {
+                        die1.RollDie8();
                         die1.DrawRoll();
                     }
                 }
-                else if (initialOutput == 9)
+                else if (parsedInput == 9)
                 {
                     Console.WriteLine("D9: Press ENTER to roll the dice");
-                    if (Console.ReadLine() == "LOAD")
+                    if (Console.ReadLine().ToUpper() == "LOAD")
                     {
                         Console.WriteLine("Load activated. Enter desired value:");
-                        while (!Int32.TryParse(Console.ReadLine(), out load) || load < 0 || load > 6)
+                        while (!Int32.TryParse(Console.ReadLine(), out load) || load < 0 || load > 9)
                             Console.WriteLine("To load the dice, you need to enter a valid digit from 1-6");
                         die1.RollDie9();
                         die2.RollDie9();
@@ -345,14 +387,21 @@
                         }
                         else if (die9.Roll == load)
                         {
-                            die9.DrawRoll();
+                            die1.DrawRoll();
+                        }
+                        else
+                        {
+                            die1.RollDie9();
+                            die1.DrawRoll();
                         }
                     }
                     else
                     {
+                        die1.RollDie9();
                         die1.DrawRoll();
                     }
                 }
+               
             }
             else
             {
