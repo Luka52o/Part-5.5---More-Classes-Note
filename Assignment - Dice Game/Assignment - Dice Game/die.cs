@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Part_5._5___More_Classes
+namespace Assignment___Dice_Game
 {
     public class die
     {
